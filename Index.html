@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+<style>
+
+	body {
+		background-image: url("citybackdrop.gif");
+		background-size: cover;
+		
+	}
+
+	#container {
+		height: 790px;
+		width: 1000px;
+		/*margin-top: 400px;*/
+		display: flex;
+		align-items: flex-end;
+		justify-content: flex-start;
+			
+	}
+
+	#bus, #dino {
+		right: 60em;
+		position: absolute;
+	}
+
+	#dino{
+		margin-left: 30em;
+	}
+
+</style>
+
+</head>
+<body>
+
+<p>
+	<button onclick="Move()">Run</button>
+</p>
+	
+
+<div id="container">
+
+<div id="bus">
+
+	<img src="bus.gif" id="i" width='630' height='400'allowFullScreen>
+</div>
+
+<div id='dino'>
+	<img src="dino.gif" width="270" height="310" >
+</div>
+
+</div>
+
+
+<script type = "text/javascript">
+
+	function Move() {
+	
+		var elem1 = document.getElementById("bus");
+		var elem2 = document.getElementById("dino");
+		var i =document.getElementById("i"); 
+		var id = setInterval(frame,1); 
+		var posX = -1000;
+
+
+
+	function frame() { 		//frame is declared/called in var
+		if (posX == 1400) { //will move the id's outside of the div container
+			clearInterval(id) //
+		} 
+		else { 
+			posX++; 
+			elem1.style.left = posX + "px"; //moves bus left to right
+			 elem2.style.left = posX + "px";// moves dino "   "
+			}
+	}
+	}
+
+
+
+</script>
+
+<audio src="run.mp3" autoplay hidden="" loop> <!--RUN music clip-->
+
+</body>
+
+</html>
